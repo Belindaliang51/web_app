@@ -28,10 +28,10 @@
 					<a class="nav-link active" href="index.html">Overview of Project</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="/data">Datasets</a>
+					<a class="nav-link" href="data.html">Datasets</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link " href="/feedback">Your Feedback</a>
+					<a class="nav-link " href="feedback.html">Your Feedback</a>
 				</li>
 				<li class="nav-item dropdown ml-md-auto">
 					 <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown">Insights</a>
@@ -100,8 +100,9 @@
 			<div class="row">
 				<div class="col-md-2"></div>
 				<div class="col-md-8">
-					<!-- add form -->
-					<form action ="/feedback">
+
+					<!-- Add form -->
+					<form method="POST" action="/send">
 					<div class="input-group mb-3">
 						<div class="input-group-prepend">
 						  <span class="input-group-text" id="basic-addon1"><strong>Your First Name :</strong> </span>
@@ -126,10 +127,9 @@
 					  </div>
 					  <br>
 					  <button class="btn btn-primary" type="submit">Submit form</button>
-					</form>
-					<!-- form end -->
 				</div>
-				
+				</form>
+				<!-- form end  -->
 				<div class="col-md-2"></div>
 			</div>
 			

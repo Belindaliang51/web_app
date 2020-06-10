@@ -30,27 +30,36 @@ from .models import Feedback
 # create route that renders index.html template
 @app.route("/")
 def home():
-    return render_template("feedback.html")
+    return render_template("index.html")
 
 
 @app.route("/data")
 def dataset():
     return render_template("data.html")
 
+@app.route("/circle")
+def circle():
+    return render_template("circle.html")
+
+@app.route("/cluster")
+def cluster():
+    return render_template("cluster.html")
+
 # Query the database and send the jsonified results
-@app.route("/feedback", methods=["GET", "POST"])
+@app.route("/send", methods = ["POST"])
 def feedback():
     if request.method == "POST":
         name = request.form["name"]
         email = request.form["email"]
         feedback = request.form["feedback"]
-        
+            
         result = Feedback(name=name, email=email, feedback=feedback)
         db.session.add(result)
         db.session.commit()
+        
         return redirect("/", code=302)
-    
-    return render_template("success.html")
+        
+    return render_template("feedback.html")
 
 
 @app.route("/api/feedbacks")
