@@ -35,6 +35,9 @@ def home():
 def dataset():
     return render_template("data.html")
 
+@app.route("/database")
+def database():
+    return render_template("database.html")
 
 @app.route("/d31")
 def d31():
@@ -58,8 +61,8 @@ def feedback():
         email = request.form["email"]
         feedback = request.form["feedback"]
             
-        result = Feedback(name=name, email=email, feedback=feedback)
-        db.session.add(result)
+        feedback = Feedback(name=name, email=email, feedback=feedback)
+        db.session.add(feedback)
         db.session.commit()
         
         return redirect("/", code=302)
@@ -68,32 +71,20 @@ def feedback():
 
 
 @app.route("/api/feedbacks")
-def feedbacks():
-    results = db.session.query(Feedback.name, Feedback.email, Feedback.feedback).all()
+def feedbackinfo():
+    results = db.session.query(Feedback.name, Feedback.feedback).all()
 
-    hover_text = [result[0] for result in results]
-    email = [result[1] for result in results]
-    feedback = [result[2] for result in results]
+    #hover_text = [result[0] for result in results]
+    name = [result[0] for result in results]
+    feedback = [result[1] for result in results]
 
     feedback_data = [{
-        "type": "scattergeo",
-        "locationmode": "USA-states",
-        "email": email,
+        "name": name,
         "feedback": feedback,
-        "text": hover_text,
-        "hoverinfo": "text",
-        "marker": {
-            "size": 50,
-            "line": {
-                "color": "rgb(8,8,8)",
-                "width": 1
-            },
-        }
+        #"text": hover_text,
     }]
 
-
     return jsonify(feedback_data)
-
 
 ############################################
 # Pull data to front end

@@ -34,12 +34,16 @@
 					<a class="nav-link" href="/data">Datasets</a>
 				</li>
 				<li class="nav-item">
+					<a class="nav-link " href="https://bikesharetoronto.com">Bike Share Toronto</a>
+				</li>
+				<li class="nav-item">
 					<a class="nav-link " href="/send">Your Feedback</a>
 				</li>
 				<li class="nav-item dropdown ml-md-auto">
 					 <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown">Insights</a>
 					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
 						 <a class="dropdown-item" href="https://colab.research.google.com/drive/1i1BthFx1pK8xQd6UK1WxJFzLHFrDSHnO#scrollTo=vtkKnVe1y9GK">Python&SQL</a> 
+						 <a class="dropdown-item" href="/database">Database & APIs</a>
 						 <a class="dropdown-item" href="/map">Leflet.js</a>
 						 <a class="dropdown-item" href="/d31">D3 Part One.js</a>
 						  <a class="dropdown-item" href="/d32">D3 Part Two.js</a> 
@@ -107,7 +111,7 @@
 			<div class="row">
 				<div class="col-md-2"></div>
 				<div class="col-md-8">
-					<form action="/send">
+					<form action="/send" method="post">
 					<div class="input-group mb-3">
 						<div class="input-group-prepend">
 						  <span class="input-group-text" id="basic-addon1"><strong>Your First Name :</strong> </span>
@@ -133,6 +137,11 @@
 					  <br>
 					  <button class="btn btn-primary" type="submit">Submit form</button>
 					</form>
+					<br>
+					<!-- Add link to feedback api -->
+					<p>
+						<a class="btn btn-warning" href="/api/feedbacks">Find who else left feedbacks</a>
+					</p>
 				</div>
 				<div class="col-md-2"></div>
 			</div>

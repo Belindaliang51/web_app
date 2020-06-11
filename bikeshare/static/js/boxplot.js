@@ -13,7 +13,7 @@
               "translate(" + margin1.left + "," + margin1.top + ")");
     
     // Read the data and compute summary statistics for each month
-    d3.csv("../grouped_data.csv", function(data) {
+    d3.csv("/static/grouped_data.csv", function(data) {
     
       var sumstat = d3.nest() // nest function allows to group the calculation per level of a factor
         .key(function(d) { return d.Date.split("/")[1];})

@@ -13,7 +13,7 @@
               "translate(" + margin.left + "," + margin.top + ")");
     
     //Read the data
-    d3.csv("../grouped_data.csv",function(d){
+    d3.csv("/static/grouped_data.csv",function(d){
         return { date : d3.timeParse("%Y/%m/%d")(d.Date), value : d.Ave_duration/60 }
       },
     
