@@ -10,8 +10,11 @@
     <meta name="description" content="Source code generated using layoutit.com">
     <meta name="author" content="LayoutIt!">
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+	<!-- <link href="css/style.css" rel="stylesheet"> -->
+	<link href="{{url_for('static',filename='css/bootstrap.min.css')}}" rel="stylesheet" media="all">
+	<link href="{{url_for('static',filename='css/style.css')}}" rel="stylesheet">
+
 	<!-- Leaflet CSS -->
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
 	integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
@@ -25,18 +28,22 @@
 		<div class="col-md-12">
 			<ul class="nav nav-tabs">
 				<li class="nav-item">
-					<a class="nav-link active" href="index.html">Overview of Project</a>
+					<a class="nav-link active" href="/">Overview of Project</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="data.html">Datasets</a>
+					<a class="nav-link" href="/data">Datasets</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link " href="feedback.html">Your Feedback</a>
+					<a class="nav-link " href="/send">Your Feedback</a>
 				</li>
 				<li class="nav-item dropdown ml-md-auto">
 					 <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown">Insights</a>
 					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-						 <a class="dropdown-item" href="https://colab.research.google.com/drive/1i1BthFx1pK8xQd6UK1WxJFzLHFrDSHnO#scrollTo=vtkKnVe1y9GK">Python&SQL</a> <a class="dropdown-item" href="d3_index.html">D3.js</a> <a class="dropdown-item" href="map.html">Leflet.js</a>
+						 <a class="dropdown-item" href="https://colab.research.google.com/drive/1i1BthFx1pK8xQd6UK1WxJFzLHFrDSHnO#scrollTo=vtkKnVe1y9GK">Python&SQL</a> 
+						 <a class="dropdown-item" href="/map">Leflet.js</a>
+						 <a class="dropdown-item" href="/d31">D3 Part One.js</a>
+						  <a class="dropdown-item" href="/d32">D3 Part Two.js</a> 
+						  
 						<div class="dropdown-divider">
 						</div> <a class="dropdown-item" href="https://bikesharetoronto.com">Bike Share Toronto</a>
 					</div>
@@ -100,9 +107,7 @@
 			<div class="row">
 				<div class="col-md-2"></div>
 				<div class="col-md-8">
-
-					<!-- Add form -->
-					<form method="POST" action="/send">
+					<form action="/send">
 					<div class="input-group mb-3">
 						<div class="input-group-prepend">
 						  <span class="input-group-text" id="basic-addon1"><strong>Your First Name :</strong> </span>
@@ -127,9 +132,8 @@
 					  </div>
 					  <br>
 					  <button class="btn btn-primary" type="submit">Submit form</button>
+					</form>
 				</div>
-				</form>
-				<!-- form end  -->
 				<div class="col-md-2"></div>
 			</div>
 			
@@ -158,9 +162,13 @@
 	</div>
 </div>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-	<script src="js/scripts.js"></script>
+    <!-- <script src="js/jquery.min.js"></script> -->
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+	<!-- <script src="js/scripts.js"></script> -->
+	<script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
+	<script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
+	<script src="{{url_for('static',filename='js/scripts.js')}}"></script>
+
 	<!-- D3 -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
 	<!-- Leaflet JavaScript -->
@@ -168,8 +176,9 @@
 	integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
 	crossorigin=""></script>
 	<!-- API Key -->
-	<script type="text/javascript" src="static/js/config.js"></script>
+	<!-- <script type="text/javascript" src="static/js/config.js"></script> -->
+	
 	<!-- Our JavaScript -->
-	<script type="text/javascript" src="static/js/logic.js"></script>
+	<!-- <script type="text/javascript" src="static/js/logic.js"></script> -->
   </body>
 </html>

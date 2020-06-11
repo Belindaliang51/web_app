@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Correlation</title>
+  	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  	<link rel="stylesheet" media="all" href="{{ url_for('static', filename='css/style.css')}}">
+	<link rel="stylesheet" media="all" href="{{ url_for('static', filename='css/d3Style.css')}}">
+	
+	<meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+
+    <link media="all" href="{{ url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
+	<link media="all" href="{{ url_for('static', filename='css/style.css')}}" rel="stylesheet">
+	
+	<!-- Leaflet CSS -->
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+	integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+	crossorigin=""/>
+
+  </head>
+  <body>
+
+    <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<ul class="nav nav-tabs">
+				<li class="nav-item">
+					<a class="nav-link active" href="/">Overview of Project</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/data">Datasets</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link " href="https://bikesharetoronto.com">Bike Share Toronto</a>
+				</li>
+				<li class="nav-item dropdown ml-md-auto">
+					 <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown">Insights</a>
+					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+						 <a class="dropdown-item" href="https://colab.research.google.com/drive/1JyrDLsnxYEydXeEIkHD4wnVYbCAqiW2T#scrollTo=Mp4S7hNLimqG">Python&SQL</a> 
+						<div class="dropdown-divider">
+						
+						</div> <a class="dropdown-item" href="/map">Leflet.js</a><a class="dropdown-item" href=".d31">D3 Part One.js</a> 
+						<a class="dropdown-item" href="/d32">D3 Part Two.js</a> 
+					</div>
+				</li>
+			</ul>
+			
+			<h3 class="text-center">
+				<span id="docs-internal-guid-962c67dd-7fff-dd2b-087c-f65a68d40d5c"><span><br><p>   </p><p>   </p>
+					<h1>Correlations Between Weather and Bikeshare trip</h1><p>   </p><p></p><br></span></span>
+			</h3>
+			
+			<div class="row">
+				<div class="col-md-12">
+					<p>   </p>
+					<p>   </p>
+					<p>   </p>
+				</div>
+			</div>
+
+			
+				<div class="row">
+				  <div class="col-xs-12  col-md-9">
+					<div id="scatter">
+					</div>
+				  </div>
+				  <!-- <div class="col-xs-12  col-md-1"></div> -->
+				  <div class="col-xs-12  col-md-3">
+					<div class="card border-info mb-3" style="max-width: 18rem;">
+						<div class="card-header">Insights:</div>
+						<div class="card-body text-info">
+						  
+						  <p class="card-text">- Click on the axis to show different data(Y-axis first then X-axis)<br>
+
+							<br>- Observing the correlation between Temp and Ave Duration, it is easy to find out the trip duration grown as the temperature reached to 20-25 degrees. Similarly the growth of the bike using frequency grow up as temperature rises.
+							
+							<br><br>- However if we choose to observe the correlation between Temperature and average distance travelled, we can find the longest distance travelled (1322m) is under the temperature range of 0-5 degrees.
+						  </p>
+
+						  <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+							<div class="btn-group" role="group" aria-label="Third group">
+							  <button type="button" class="btn btn-secondary"><a href="/d32">Next Page</a></button>
+						  	</div>
+						  </div>
+						</div>
+					</div>
+					
+					</div>
+				  </div>
+				</div>
+				<br>
+				
+		
+			
+			
+			<br>
+			<br>
+			
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<br><br>
+			<address>
+				<br>
+				<p class="addbody">
+					<strong>  View more informations:</strong><br>   GitHub Link<br>   LinkedIn<br> <abbr title="Phone">  P:</abbr> (123) 456-7890
+				 <br>
+				 <br>
+				</p>
+			</address>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<p>   </p>
+			</div>
+		</div>
+	</div>
+</div>
+
+    <script media="all" src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
+    <script media="all" src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+	<script media="all" src="{{ url_for('static', filename='js/scripts.js')}}"></script>
+	<!-- D3 -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
+	<!-- Leaflet JavaScript -->
+	<script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+	integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+	crossorigin=""></script>
+	<!-- API Key -->
+	<!-- <script media="all" type="text/javascript" src="{{ url_for('static', filename='js/config.js')}}"></script> -->
+	
+	<!-- Our JavaScript -->
+	<!-- <script media="all" type="text/javascript" src="{{ url_for('static', filename='js/logic.js')}}"></script> -->
+	
+	  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	  <script src="https://d3js.org/d3.v5.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+	  <script media="all" type="text/javascript" src="{{ url_for('static', filename='js/weather.js')}}">
+	  </script>
+  </body>
+</html>

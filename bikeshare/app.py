@@ -15,38 +15,43 @@ app = Flask(__name__)
 #################################################
 # Database Setup
 #################################################
-
 from flask_sqlalchemy import SQLAlchemy
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '') or "sqlite:///db.sqlite"
-
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
+    'DATABASE_URL', '') or "postgres://tmuhxnjmfuqawf:638b904e87bffc5cf9e030cae615ca3fc2d132e7ee573d7eaa4888ea6edf91de@ec2-3-222-150-253.compute-1.amazonaws.com:5432/d1ngrvstakv97r"
 # Remove tracking modifications
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
-from .models import Feedback
+from .models import Feedback, Station_Coordinate
 
 
 # create route that renders index.html template
 @app.route("/")
 def home():
-    return render_template("index.html")
-
+   return render_template("index.html")
 
 @app.route("/data")
 def dataset():
     return render_template("data.html")
 
-@app.route("/circle")
-def circle():
-    return render_template("circle.html")
 
-@app.route("/cluster")
-def cluster():
-    return render_template("cluster.html")
+@app.route("/d31")
+def d31():
+   return render_template("d31.html")
+
+
+@app.route("/d32")
+def d32():
+    return render_template("d32.html")
+
+
+@app.route("/map")
+def map():
+   return render_template("map.html")
 
 # Query the database and send the jsonified results
-@app.route("/send", methods = ["POST"])
+@app.route("/send", methods = ["POST", "GET"])
 def feedback():
     if request.method == "POST":
         name = request.form["name"]
@@ -58,7 +63,7 @@ def feedback():
         db.session.commit()
         
         return redirect("/", code=302)
-        
+
     return render_template("feedback.html")
 
 
@@ -95,25 +100,13 @@ def feedbacks():
 @app.route("/api/stations")
 def developer():    
     # Query all station coordinate data
-    results = session.query(station_coordinate.station_id,
-                            station_coordinate.station_name,
-                            station_coordinate.lat,
-                            station_coordinate.lon,
-                            station_coordinate.capacity).all()
+    results = db.session.query(Station_Coordinate.station_id,
+                               Station_Coordinate.station_name,
+                               Station_Coordinate.lat,
+                               Station_Coordinate.lon,
+                               Station_Coordinate.capacity).all()
 
-
-    # Create a dictionary from the row data and append to a list of stations
-    stations = []
-    for station_id, station_name, lat, lon, capacity in results:
-        station_coordinate = {}
-        station_coordinate["station_id"] = station_id
-        station_coordinate["station_name"] = station_name
-        station_coordinate["lat"] = lat
-        station_coordinate["lon"] = lon
-        station_coordinate["capacity"] = capacity
-        station_coordinate.append(stations)
-
-    return jsonify(station_coordinate)
+    return jsonify(results)
 
 if __name__ == "__main__":
-    app.run()
+    app.run()#host-'0.0.0.0', port=8080)

@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <title>Data</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/data.css">
-    <link href="css/style.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css/data.css"> -->
+    <link href="{{url_for('static',filename='css/data.css')}}" rel="stylesheet">
+    <!-- <link href="css/style.css" rel="stylesheet"> -->
+    <link href="{{url_for('static',filename='css/style.css')}}" rel="stylesheet">
     </head>
 
     <body>
@@ -25,9 +27,9 @@
                     <li class="nav-item dropdown ml-md-auto">
                        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown">Insights</a>
                       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                         <a class="dropdown-item" href="https://colab.research.google.com/drive/1i1BthFx1pK8xQd6UK1WxJFzLHFrDSHnO#scrollTo=vtkKnVe1y9GK">Python&SQL</a> 
+                         <a class="dropdown-item" href="https://colab.research.google.com/drive/1JyrDLsnxYEydXeEIkHD4wnVYbCAqiW2T#scrollTo=Mp4S7hNLimqG">Python&SQL</a> 
                         <div class="dropdown-divider">
-                        </div> <a class="dropdown-item" href="d3_index.html">D3.js</a> <a class="dropdown-item" href="map.html">Leflet.js</a>
+                        </div> <a class="dropdown-item" href="/map">Leflet.js</a><a class="dropdown-item" href="/d31">D3 Part One.js</a> <a class="dropdown-item" href="/d32">D3 Part Two.js</a> 
                       </div>
                     </li>
                   </ul>
@@ -2593,26 +2595,31 @@
                 </div>
             </section>
 
+           
             <div class="row">
-                <div class="col-md-12">
-            </div>
-            <div class="col-md-12">
+              <div class="col-md-12">
                 <br><br>
                 <address>
-                  
+                  <br>
                   <p class="addbody">
                     <strong>  Hire Us</strong><br>   We're currently taking on new projects. Would you like to discuss yours?
                     
                   </p>
                   <p class="addbody">
-                    GitHub<a  class="addbody" href="https://github.com/hannahcjy/Project2">GitHub</a>  
-                    <br>  LinkedIn<a  class="addbody" href="https://www.linkedin.com/in/lucy-wo-siyu/">LinkedIn</a> 
-                    <br> <abbr title="Phone">  Phone:</abbr> (123) 456-7890
-                    <br>Email: info@coolgrils.org.com
+                    <abbr title="Phone" color="white"><strong color="white">GitHub</strong></abbr><a  class="addbody" href="https://github.com/hannahcjy/Project2">GitHub</a>  
+                    <br> <abbr title="Phone"><strong>LinkedIn</strong></abbr> <a  class="addbody" href="https://www.linkedin.com/in/lucy-wo-siyu/">LinkedIn</a> 
+                    <br> <abbr title="Phone"><strong>  Phone:</strong></abbr> (123) 456-7890
+                    <br><strong>Email:</strong> info@coolgrils.org.com
                    <br>
                    <br>
                   </p>
                 </address>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <p>   </p>
+                </div>
+              </div>
             </div>
         </div>
 
