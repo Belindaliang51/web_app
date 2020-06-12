@@ -97,7 +97,17 @@ def developer():
                                Station_Coordinate.lon,
                                Station_Coordinate.capacity).all()
 
-    return jsonify(results)
+    all_stations = []
+    for station_id, station_name, lat, lon, capacity in results:
+        station_dict = {}
+        station_dict["station_id"] = station_id
+        station_dict["station_name"] = station_name
+        station_dict["lat"] = lat
+        station_dict["lon"] = lon
+        station_dict["capacity"] = capacity
+        all_stations.append(station_dict)
+
+    return jsonify(all_stations)
 
 if __name__ == "__main__":
     app.run()#host-'0.0.0.0', port=8080)
