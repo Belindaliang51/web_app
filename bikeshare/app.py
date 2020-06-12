@@ -79,7 +79,7 @@ def feedbackinfo():
     feedback = [result[1] for result in results]
 
     feedback_data = [{
-        "name": name,
+        #"name": name,
         "feedback": feedback,
         #"text": hover_text,
     }]
