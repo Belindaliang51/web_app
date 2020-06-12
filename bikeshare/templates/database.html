@@ -86,10 +86,12 @@
 
 
     <p>
-        <h4 id="green" style="text-align:left;"><strong>Database Build Up:</strong></h4>
+        <h3 id="green" style="text-align:left;"><strong>Database Build Up</strong></h3>
     </p>
-    <!--Workflow -->
+    <!--Database Workflow -->
     <div >
+        <img src="{{url_for('static',filename='imgs/database.png')}}" width="1300" height="650" media="all"
+            alt="database" style="margin-left: 200px;">
     </div>
 
 
@@ -205,21 +207,17 @@
     <br>
 
     <p>
-        <h4  style="text-align:left;"><strong>Flask APIs and Heroku Environment Set Up:</strong></h4>
+        <h3 id="green" style="text-align:left;"><strong>RESTful API design with Python and Flask</strong></h3>
     </p>
     <p>
         <a class="btn btn-warning" href="/api/stations">Developer: api/stations</a>
+        <a class="btn btn-warning" href="/api/stations">Developer: api/feedbacks</a>
     </p>
-    
+    <img src="{{url_for('static',filename='imgs/flask.png')}}" width="1000" height="450" media="all" alt="database"
+        style="margin-left: 200px;">
+    <!-- <img src="{{url_for('static',filename='imgs/flask_code.png')}}" width="1200" height="1200" media="all" alt="database"> -->   
     <div>
     </div>
-
-
-
-
-    <br>
-    <br>
-
 
     <div class="row">
 
@@ -238,8 +236,8 @@
                     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                         data-parent="#accordionExample">
                         <div class="card-body">
-                            <br><strong>Pros: </strong> Easy to test the web application performance (both front end and back end)
-                            <br><strong>Cons: </strong> Hava to run flask again for each testing. 
+                            <strong>Pros: </strong> Easy to test the web application performance.
+                            <br><strong>Cons: </strong> Have to "run flask" again for each testing. 
 
                         </div>
                     </div>
@@ -250,6 +248,17 @@
     </div>
     </div>
     </div>
+
+
+    <br>
+    <br>
+    <h3 id="green" style="text-align:left;"><strong style="margin-right: 20px;">Deploy to Heroku</strong><a
+            href="https://bikeshare-2017.herokuapp.com/">https://bikeshare-2017.herokuapp.com/</a>
+    </h3>
+    
+    <!-- <img src="https://miro.medium.com/max/1400/1*pmCYFW7bPmEaysG2dl27IA.png" alt="heroku deployment"> -->
+    <img src="{{url_for('static',filename='imgs/heroku.png')}}" width="900" height="320" media="all" alt="database"
+        style="margin-left: 240px;">
 
 
     <!-- Footer -->
